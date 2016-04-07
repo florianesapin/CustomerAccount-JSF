@@ -6,11 +6,12 @@
     
 <application>
    <locale-config>
-      <default-locale>en</default-locale>
+      <default-locale>fr</default-locale>
+      <supported-locale>en</supported-locale>
       <supported-locale>fr</supported-locale>
    </locale-config>
    <resource-bundle>
-      <base-name>com.tutorialspoint.messages</base-name>
+      <base-name>ch.hearc.ig.odi.customeraccountjsf.traduction.message</base-name>
       <var>msg</var>
    </resource-bundle>
 </application>

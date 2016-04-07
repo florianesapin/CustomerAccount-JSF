@@ -8,11 +8,13 @@ package ch.hearc.ig.odi.customeraccountjsf.business;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import javax.enterprise.context.RequestScoped;
 
 /**
  *
  * @author floriane.sapin
  */
+@RequestScoped
 public class Bank {
 
     private Integer number;
