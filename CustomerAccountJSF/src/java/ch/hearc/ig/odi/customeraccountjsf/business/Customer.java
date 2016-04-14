@@ -7,12 +7,14 @@ public class Customer {
 	private Map<String, Account> accounts;  //--converti en Map, VP=> Collection<Account> accounts;
 	private int number;
 
+
 	/**
 	 * 
 	 * @param number
 	 */
 	public Customer(Integer number) {
             this.number = number;
+
             this.accounts = new HashMap();
 	}
 
@@ -36,5 +38,23 @@ public class Customer {
             accounts.put(account.getNumber(), account);
             
 	}
+
+        public Map<String, Account> getAccounts() {
+            return accounts;
+        }
+
+        public void setAccounts(Map<String, Account> accounts) {
+            this.accounts = accounts;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public void setNumber(int number) {
+            this.number = number;
+        }
+
+ 
 
 }

@@ -16,4 +16,13 @@
       <var>msg</var>
    </resource-bundle>
 </application>
+
+<navigation-rule>
+<from-view-id>/createCustomer.xhtml</from-view-id>
+<navigation-case>
+<from-action>#{CustomerCreateBean.save}</from-action>
+<from-outcome>success</from-outcome>
+<to-view-id>/createCustomerOk.xhtml</to-view-id>
+</navigation-case>
+</navigation-rule>
 </faces-config>

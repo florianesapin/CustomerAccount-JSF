@@ -5,6 +5,7 @@
  */
 package ch.hearc.ig.odi.customeraccountjsf.beans;
 
+import ch.hearc.ig.odi.customeraccountjsf.services.Services;
 import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
@@ -37,8 +38,8 @@ public class CustomerCreateBean implements Serializable{
         return number;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setNumber(String number) {
+        this.number = Integer.parseInt(number);
     }
 
     public String getLastName() {
@@ -57,8 +58,11 @@ public class CustomerCreateBean implements Serializable{
         this.firstName = firstName;
     }
     
-    public void save(){
-        services.saveCustomer(number, lastName, lastName);
+    public String save(){
+        String result;
+        services.saveCustomer(number, firstName, lastName);
+        result = "Success";
+        return result; 
     }
     
     

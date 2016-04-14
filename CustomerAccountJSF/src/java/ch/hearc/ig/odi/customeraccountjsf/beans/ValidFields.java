@@ -22,7 +22,7 @@ public class ValidFields implements Validator{
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         String urlValue = value.toString();
-        if (urlValue == null){
+        if (urlValue.equals(null)){
             FacesMessage msgErr =
             new FacesMessage("validation failed","Champ obligatoire");
          msgErr.setSeverity(FacesMessage.SEVERITY_ERROR);

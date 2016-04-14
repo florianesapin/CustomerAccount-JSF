@@ -1,4 +1,4 @@
-package ch.hearc.ig.odi.customeraccountjsf.beans;
+package ch.hearc.ig.odi.customeraccountjsf.services;
 
 import ch.hearc.ig.odi.customeraccountjsf.business.Bank;
 import ch.hearc.ig.odi.customeraccountjsf.business.Customer;

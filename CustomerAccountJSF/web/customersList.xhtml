@@ -14,24 +14,24 @@
         
         <f:view>
             <h:form id="formCleints">
-                <h:dataTable id="dtClients" var="cli" value="#{cusrtomersBean.lesClients}">
+                <h:dataTable id="dtClients" var="cli" value="#{customersBean.lesClients}">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Numéro"/>
                         </f:facet>
-                        <h:outputText value="#{cli.number}"/>
+                        <h:outputText id="inputNumero" value="#{cli.number}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Nom"/>
                         </f:facet>
-                        <h:outputText value="#{cli.firstName}"/>
+                        <h:outputText id="inputNom" value="#{cli.firstName}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Prénom"/>
                         </f:facet>
-                        <h:outputText value="#{cli.LastName}"/>
+                        <h:outputText  id="inputPrenom" value="#{cli.lastName}"/>
                     </h:column>
             
                 </h:dataTable>

@@ -5,8 +5,12 @@
  */
 package ch.hearc.ig.odi.customeraccountjsf.beans;
 
+import ch.hearc.ig.odi.customeraccountjsf.services.Services;
 import ch.hearc.ig.odi.customeraccountjsf.business.Customer;
+import ch.hearc.ig.odi.customeraccountjsf.business.Individual;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.SessionScoped;
@@ -37,8 +41,13 @@ public class CustomersBean implements Serializable{
     }
     
     public DataModel<Customer> getLesClients(){
-        lesClients = new ListDataModel<>();
-        lesClients.setWrappedData(services.getCustomers());
+        lesClients = new ListDataModel<Customer>();
+        List<Customer> listCustomer = new ArrayList();
+        listCustomer.add(new Individual(1, "Floriane", "sapin"));
+
+        //doit retourner une liste
+        lesClients.setWrappedData(services.getCustomersList());
+
         return lesClients;
     }
     

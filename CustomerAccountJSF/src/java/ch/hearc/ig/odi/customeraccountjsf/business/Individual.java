@@ -17,6 +17,7 @@ public class Individual extends Customer{
     private String email;
     private String firstName;
     private String lastName;
+
     
     public Individual(Integer number, String firstname, String lastName, Date birthDate, String email){
         super(number);
@@ -24,12 +25,14 @@ public class Individual extends Customer{
         this.email = email; 
         this.firstName = firstname;
         this.lastName = lastName;
+
     }
     
     public Individual(Integer number, String firstname, String lastName){
-        super(number); 
+        super(number);
         this.firstName = firstname;
         this.lastName = lastName;
+
     }
 
     public Date getBirthDate() {
@@ -42,6 +45,22 @@ public class Individual extends Customer{
 
     public String getEmail() {
         return email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {
