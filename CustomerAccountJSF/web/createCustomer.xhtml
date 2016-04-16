@@ -19,7 +19,7 @@ and open the template in the editor.
             <h:form>
                 <h:outputLabel value="Numéro: "/><h:inputText value="#{customerCreateBean.number}"/>
                 <h:outputLabel value="#{msg.nom}"/><h:inputText value="#{customerCreateBean.lastName}" required="true" requiredMessage="Obligatoire"/>
-                <h:outputLabel value="Prénom: "/><h:inputText id="inputPrenom" value="#{customerCreateBean.firstName}"> <f:validator validatorId="ValidFields" /></h:inputText>
+                <h:outputLabel value="Prénom: "/><h:inputText id="inputPrenom" value="#{customerCreateBean.firstName}"> </h:inputText>
                 <h:commandButton value="#{msg.envoyer}" action="#{customerCreateBean.save}"/>
                 <h:message for="inputPrenom" showSummary="true" style="color:yellow" />
             </h:form>

@@ -18,10 +18,17 @@
 </application>
 
 <navigation-rule>
+    
+<from-view-id>createCustomer.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>AccountListBean</from-outcome>
+<to-view-id>detailsCustomer.xhtml</to-view-id>
+</navigation-case>
+
 <from-view-id>/createCustomer.xhtml</from-view-id>
 <navigation-case>
-<from-action>#{CustomerCreateBean.save}</from-action>
-<from-outcome>success</from-outcome>
+<from-action>#{customerCreateBean.save}</from-action>
+<from-outcome>Success</from-outcome>
 <to-view-id>/createCustomerOk.xhtml</to-view-id>
 </navigation-case>
 </navigation-rule>

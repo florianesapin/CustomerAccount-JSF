@@ -34,13 +34,14 @@ public class CustomerCreateBean implements Serializable{
     public CustomerCreateBean(){
     }
 
-    public Number getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
-        this.number = Integer.parseInt(number);
+    public void setNumber(Integer number) {
+        this.number = number;
     }
+
 
     public String getLastName() {
         return lastName;
