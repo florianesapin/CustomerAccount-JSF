@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+        
+        <h1> Détails du compte</h1>
+        
+        
+        <h:outputText value="Numero"/>
+        
+        <h:outputText  value="#{accountDetailsBean.number}"/>
+        
+       <h:outputText value="Libellé"/>
+        
+        <h:outputText  value="#{accountDetailsBean.name}"/>
+        
+        <h:outputText value="Solde"/>
+        
+        <h:outputText value="#{accountDetailsBean.balance}"/>
+        
+        <h:outputText value="Taux"/>
+        
+        <h:outputText value="#{accountDetailsBean.rate}"/>
+        
+        <h:form>
+        <h:commandButton value="Retour aux clients" action="detailsCustomer.xhtml"/>
+        
+        <h:commandButton value="Retour à la page d'accueil" action="customersList.xhtml"/>
+        </h:form>
+        
+      
+    </h:body>
+</html>

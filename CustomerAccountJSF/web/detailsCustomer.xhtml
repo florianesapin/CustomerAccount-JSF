@@ -35,7 +35,9 @@ and open the template in the editor.
                         <f:facet name="header">
                             <h:outputText value="Numéro"/>
                         </f:facet>
-                            <h:outputText id="inputNumero" value="#{account.number}"/>
+                            <h:commandLink id="linkNumero" action="#{accountDetailsBean.recupAccount(account)}">
+                                <h:outputText id="inputNumero" value="#{account.number}"/>
+                            </h:commandLink>
                     </h:column>
                     <h:column>
                         <f:facet name="header">

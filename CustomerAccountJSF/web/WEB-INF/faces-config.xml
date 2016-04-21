@@ -42,4 +42,17 @@
             <to-view-id>/detailsCustomer.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    <managed-bean>
+        <managed-bean-name>accountDetailsBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.AccountDetailsBean</managed-bean-class>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/detailsCustomer.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{accountDetailsBean.recupAccount(account)}</from-action>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/detailsAccount.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
