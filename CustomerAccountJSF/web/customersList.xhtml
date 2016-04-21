@@ -7,11 +7,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello World
-        
-        <h:link value="Page 1" outcome="page1" />
-        
-        
+        Hello World      
         <f:view>
             <h:form id="formCleints">
                 <h:dataTable id="dtClients" var="cli" value="#{customersBean.lesClients}">
@@ -19,7 +15,9 @@
                         <f:facet name="header">
                             <h:outputText value="Numéro"/>
                         </f:facet>
-                            <h:commandLink id="inputNumero" value="#{cli.number}"/>
+                        <h:commandLink id="inputNumero" action="#{accountListBean.recupClient(cli)}">
+                            <h:outputText value="#{cli.number}"/>
+                        </h:commandLink>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
@@ -33,7 +31,7 @@
                         </f:facet>
                         <h:outputText  id="inputPrenom" value="#{cli.lastName}"/>
                     </h:column>
-            
+
                 </h:dataTable>
                 <h:commandButton id="addButton" value="Ajouter" action="createCustomer.xhtml"/>
             </h:form>

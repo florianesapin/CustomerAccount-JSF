@@ -42,8 +42,7 @@ public class CustomersBean implements Serializable{
     
     public DataModel<Customer> getLesClients(){
         lesClients = new ListDataModel<Customer>();
-        List<Customer> listCustomer = new ArrayList();
-        listCustomer.add(new Individual(1, "Floriane", "sapin"));
+
 
         //doit retourner une liste
         lesClients.setWrappedData(services.getCustomersList());

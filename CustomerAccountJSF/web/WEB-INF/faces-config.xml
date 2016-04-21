@@ -2,9 +2,7 @@
 <faces-config version="2.2"
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-
-       
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">     
 <application>
    <locale-config>
       <default-locale>fr</default-locale>
@@ -16,15 +14,19 @@
       <var>msg</var>
    </resource-bundle>
 </application>
-
+    <managed-bean>
+        <managed-bean-name>customersBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.CustomersBean</managed-bean-class>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>customerCreateBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.CustomerCreateBean</managed-bean-class>
+    </managed-bean>  
+    <managed-bean>
+        <managed-bean-name>accountListBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.AccountListBean</managed-bean-class>
+    </managed-bean>
 <navigation-rule>
-    
-<from-view-id>createCustomer.xhtml</from-view-id>
-<navigation-case>
-<from-outcome>AccountListBean</from-outcome>
-<to-view-id>detailsCustomer.xhtml</to-view-id>
-</navigation-case>
-
 <from-view-id>/createCustomer.xhtml</from-view-id>
 <navigation-case>
 <from-action>#{customerCreateBean.save}</from-action>
@@ -32,4 +34,12 @@
 <to-view-id>/createCustomerOk.xhtml</to-view-id>
 </navigation-case>
 </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/customersList.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{accountListBean.recupClient(cli)}</from-action>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/detailsCustomer.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

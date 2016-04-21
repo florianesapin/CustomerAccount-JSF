@@ -31,6 +31,14 @@ public class Account {
         this.number = number;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public String getName() {
         return name;
     }

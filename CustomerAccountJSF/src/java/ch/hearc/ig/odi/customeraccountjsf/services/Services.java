@@ -71,8 +71,9 @@ public class Services implements Serializable{
     }
     
     
-    public List<Account> getAccountListByCli(Integer id){
-        
+    public List<Account> getAccountListByCli(Integer id){ 
         return new ArrayList(bank.getCustomerByNumber(id).getAccounts().values());
     }
+    
+    
 }

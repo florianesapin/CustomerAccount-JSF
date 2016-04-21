@@ -5,40 +5,63 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
         
+        <h1> Détails du client</h1>
+        
+        
+       <h:outputText value="Nom"/>
+        
+        <h:outputText  value="#{accountListBean.cli.lastName}"/>
+        
+        
+        <h:outputText value="Prénom"/>
+        
+        <h:outputText value="#{accountListBean.cli.firstName}"/>
+        
+        <h1> Détails des comptes </h1>
+     
         <f:view>
             <h:form id="formDetailCleints">
-                <h:dataTable id="detailCli" var="detailCli" value="#{accountListBean.lesComptes}">
+                <h:dataTable id="listeAccount" var="account" value="#{accountListBean.lesComptes}">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Numéro"/>
                         </f:facet>
-                            <h:commandLink id="inputNumero" value="#{detailCli.number}"/>
+                            <h:outputText id="inputNumero" value="#{account.number}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Nom"/>
                         </f:facet>
-                        <h:outputText id="inputNom" value="#{cli.firstName}"/>
+                        <h:outputText id="inputNom" value="#{account.name}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Prénom"/>
+                            <h:outputText value="Taux"/>
                         </f:facet>
-                        <h:outputText  id="inputPrenom" value="#{cli.lastName}"/>
+                        <h:outputText  id="inputTaux" value="#{account.rate}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="solde"/>
+                        </f:facet>
+                        <h:outputText  id="inputSolde" value="#{account.balance}"/>
                     </h:column>
             
                 </h:dataTable>
-                <h:commandButton id="addButton" value="Ajouter" action="createCustomer.xhtml"/>
+                
+                <h:commandButton value="Retour à la page d'accueil" action="customersList.xhtml"/>
+
             </h:form>
         </f:view>
     </h:body>
-    </body>
 </html>
