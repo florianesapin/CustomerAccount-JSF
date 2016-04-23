@@ -5,9 +5,9 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">     
 <application>
    <locale-config>
-      <default-locale>fr</default-locale>
-      <supported-locale>en</supported-locale>
+      <default-locale>en</default-locale>
       <supported-locale>fr</supported-locale>
+      <supported-locale>en</supported-locale>
    </locale-config>
    <resource-bundle>
       <base-name>ch.hearc.ig.odi.customeraccountjsf.traduction.message</base-name>
@@ -26,6 +26,7 @@
         <managed-bean-name>accountListBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.AccountListBean</managed-bean-class>
     </managed-bean>
+    
 <navigation-rule>
 <from-view-id>/createCustomer.xhtml</from-view-id>
 <navigation-case>
@@ -55,4 +56,9 @@
             <to-view-id>/detailsAccount.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>validFields</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccountjsf.beans.ValidFields</managed-bean-class>
+        <managed-bean-scope>none</managed-bean-scope>
+    </managed-bean>
 </faces-config>

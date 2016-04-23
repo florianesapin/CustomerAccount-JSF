@@ -9,19 +9,25 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Page 1</title>
+        <title>Créer client</title>
+        <f:loadBundle basename="ch.hearc.ig.odi.customeraccountjsf.traduction.message" var="msg" />
     </h:head>
     <h:body>
 
  
-        Création de client
+        <h1>#{msg.CreeerCli}</h1>
+        
         <f:view id="createView">
             <h:form>
-                <h:outputLabel value="Numéro: "/><h:inputText value="#{customerCreateBean.number}"/>
-                <h:outputLabel value="#{msg.nom}"/><h:inputText value="#{customerCreateBean.lastName}" required="true" requiredMessage="Obligatoire"/>
-                <h:outputLabel value="Prénom: "/><h:inputText id="inputPrenom" value="#{customerCreateBean.firstName}"> </h:inputText>
+
+                <h:outputLabel value="#{msg.num} : "/><h:inputText value="#{customerCreateBean.number}" required="true" requiredMessage="Numéro obligatoire"/><br></br>
+
+                <h:outputLabel value="#{msg.nom} :"/><h:inputText value="#{customerCreateBean.lastName}" required="true" requiredMessage="#{msg.NomOblig} "/><br></br>
+
+                <h:outputLabel value="#{msg.prenom} : "/><h:inputText id="inputPrenom" value="#{customerCreateBean.firstName}" validator="#{validFields.validate}"></h:inputText><br></br>
+
                 <h:commandButton value="#{msg.envoyer}" action="#{customerCreateBean.save}"/>
-                <h:message for="inputPrenom" showSummary="true" style="color:yellow" />
+                <h:message for="inputPrenom" showSummary="true" style="color:red" />
             </h:form>
         </f:view>
     </h:body>

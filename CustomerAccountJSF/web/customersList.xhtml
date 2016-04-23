@@ -4,16 +4,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>CustomerAccount</title>
     </h:head>
     <h:body>
-        Hello World      
+        
+        <h1>#{msg.ListeCLi}</h1>
         <f:view>
             <h:form id="formCleints">
                 <h:dataTable id="dtClients" var="cli" value="#{customersBean.lesClients}">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Numéro"/>
+                            <h:outputText value="#{msg.num} :"/>
                         </f:facet>
                         <h:commandLink id="inputNumero" action="#{accountListBean.recupClient(cli)}">
                             <h:outputText value="#{cli.number}"/>
@@ -21,19 +22,19 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Nom"/>
+                            <h:outputText value="#{msg.nom} :"/>
                         </f:facet>
                         <h:outputText id="inputNom" value="#{cli.firstName}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Prénom"/>
+                            <h:outputText value="#{msg.prenom} :"/>
                         </f:facet>
                         <h:outputText  id="inputPrenom" value="#{cli.lastName}"/>
                     </h:column>
 
                 </h:dataTable>
-                <h:commandButton id="addButton" value="Ajouter" action="createCustomer.xhtml"/>
+                <h:commandButton id="addButton" value="#{msg.btnAjout}" action="createCustomer.xhtml"/>
             </h:form>
         </f:view>
     </h:body>

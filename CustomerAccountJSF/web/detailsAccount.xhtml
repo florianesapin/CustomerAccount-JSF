@@ -13,32 +13,32 @@ and open the template in the editor.
 
     </h:head>
     <h:body>
-        
-        <h1> Détails du compte</h1>
-        
-        
-        <h:outputText value="Numero"/>
-        
-        <h:outputText  value="#{accountDetailsBean.number}"/>
-        
-       <h:outputText value="Libellé"/>
-        
-        <h:outputText  value="#{accountDetailsBean.name}"/>
-        
-        <h:outputText value="Solde"/>
-        
-        <h:outputText value="#{accountDetailsBean.balance}"/>
-        
-        <h:outputText value="Taux"/>
-        
-        <h:outputText value="#{accountDetailsBean.rate}"/>
-        
+
+        <h1>#{msg.DetailsCompte}</h1>
+
+
+        <h:outputLabel value="#{msg.num} :"/>
+
+        <h:outputText  value="#{accountDetailsBean.number}"/><br></br>
+
+        <h:outputLabel value="#{msg.nom} :"/>
+
+        <h:outputText  value="#{accountDetailsBean.name}"/><br></br>
+
+        <h:outputLabel value="#{msg.Solde} :"/>
+
+        <h:outputText value="#{accountDetailsBean.balance}"/><br></br>
+
+        <h:outputLabel value="#{msg.Taux} :"/>
+
+        <h:outputText value="#{accountDetailsBean.rate}"/><br></br>
+
         <h:form>
-        <h:commandButton value="Retour aux clients" action="detailsCustomer.xhtml"/>
-        
-        <h:commandButton value="Retour à la page d'accueil" action="customersList.xhtml"/>
+            <h:commandButton value="#{msg.BtnRetourCli}" action="detailsCustomer.xhtml"/> <br></br>
+
+            <h:commandButton value="#{msg.BtnRetourAccueil}" action="customersList.xhtml"/>
         </h:form>
-        
-      
+
+
     </h:body>
 </html>

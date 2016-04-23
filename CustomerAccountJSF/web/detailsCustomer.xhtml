@@ -14,26 +14,29 @@ and open the template in the editor.
     </h:head>
     <h:body>
         
-        <h1> Détails du client</h1>
+        <h1>#{msg.DetailsCli}</h1>
+        
+        <h:outputLabel value="#{msg.num} :"/>
+        
+        <h:outputText  value="#{accountListBean.cli.number}"/><br></br>
+        
+        <h:outputLabel value="#{msg.nom} :"/>
+        
+        <h:outputText  value="#{accountListBean.cli.lastName}"/><br></br>
         
         
-       <h:outputText value="Nom"/>
-        
-        <h:outputText  value="#{accountListBean.cli.lastName}"/>
-        
-        
-        <h:outputText value="Prénom"/>
+        <h:outputLabel value="#{msg.prenom} :"/>
         
         <h:outputText value="#{accountListBean.cli.firstName}"/>
         
-        <h1> Détails des comptes </h1>
+        <h1>#{msg.DetailsComptes}</h1>
      
         <f:view>
             <h:form id="formDetailCleints">
                 <h:dataTable id="listeAccount" var="account" value="#{accountListBean.lesComptes}">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Numéro"/>
+                            <h:outputText value="#{msg.num} :"/>
                         </f:facet>
                             <h:commandLink id="linkNumero" action="#{accountDetailsBean.recupAccount(account)}">
                                 <h:outputText id="inputNumero" value="#{account.number}"/>
@@ -41,27 +44,27 @@ and open the template in the editor.
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Nom"/>
+                            <h:outputText value="#{msg.nom} : "/>
                         </f:facet>
                         <h:outputText id="inputNom" value="#{account.name}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Taux"/>
+                            <h:outputText value="#{msg.Taux} :"/>
                         </f:facet>
                         <h:outputText  id="inputTaux" value="#{account.rate}"/>
                     </h:column>
                     
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="solde"/>
+                            <h:outputText value="#{msg.Solde}"/>
                         </f:facet>
                         <h:outputText  id="inputSolde" value="#{account.balance}"/>
                     </h:column>
             
                 </h:dataTable>
                 
-                <h:commandButton value="Retour à la page d'accueil" action="customersList.xhtml"/>
+                <h:commandButton value="#{msg.BtnRetourAccueil}" action="customersList.xhtml"/>
 
             </h:form>
         </f:view>
